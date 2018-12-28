@@ -1,3 +1,6 @@
+import { Game } from './battleplate.js';
+let Gamew;
+
 const title = "BattleShip - Les Influenceurs"
 document.title = title;
 const container = document.getElementById('container');
@@ -23,7 +26,9 @@ startGameBtn.addEventListener('click', function(){
   startGameBtn.style.display = "none";
   //TODO
   // show game
+  Gamew = new Game();
 });
 gameContainer.appendChild(startGameBtn);
 gameContainer.setAttribute('id', 'game-container');
 container.appendChild(gameContainer);
+
