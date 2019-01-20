@@ -66,6 +66,10 @@ export class Game {
     if (this.AIFleet.fleetDestroyed()) {
       alert('Congratulations, you win!');
       this.gameOver = true;
+      const computerCells = document.querySelector('.computer-player').childNodes;
+      for(let i = 0; i < computerCells.length; i++) {
+        computerCells[i].removeEventListener('click', () => {this.shootListener()}, false);
+      }
       this.incrementWins();
     } else if (this.playerFleet.fleetDestroyed()) {
       alert('Yarr! The computer sank all your ships. Try again.');
