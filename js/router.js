@@ -56,14 +56,20 @@ export class Router{
     const startGameBtn = document.createElement('a');
     startGameBtn.innerHTML = "Start The Battleship";
     startGameBtn.setAttribute('class', 'btn btn-success');
-    startGameBtn.setAttribute('href', '#/game');
+    startGameBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      window.location.hash = '#/game';
+    })
     startGameBtn.style.background = "#4ECDC4";
 
     // stats button
     const statsBtn = document.createElement('a');
     statsBtn.innerHTML = 'Stats';
     statsBtn.setAttribute('class', 'btn');
-    statsBtn.setAttribute('href', '#/stats');
+    statsBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      window.location.hash = '#/stats';
+    });
     statsBtn.style.background = "#FF6B6B";
 
     mainBtns.appendChild(startGameBtn);
